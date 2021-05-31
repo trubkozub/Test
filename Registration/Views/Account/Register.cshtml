@@ -1,0 +1,54 @@
+﻿@model Registration.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="form-wrapper">
+    <br />
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div>
+            <h4>Реєстрація користувача</h4>
+            <hr />
+            @Html.ValidationSummary(false)
+
+            <div>
+                Електронна Адреса
+                <div>
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Введіть електронну адресу" } })
+                </div>
+            </div>
+
+            <div>
+                Клас
+                <div>
+                    @Html.EditorFor(model => model.Grade, new { htmlAttributes = new { @class = "form-control", placeholder = "Введіть клас" } })
+                </div>
+            </div>
+
+            <div>
+                Пароль
+                <div>
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Введіть пароль" } })
+                </div>
+            </div>
+
+            <div>
+                Підтвердження паролю
+                <div>
+                    @Html.EditorFor(model => model.PasswordConfirm, new { htmlAttributes = new { @class = "form-control", placeholder = "Підтведіть пароль" } })
+                </div>
+            </div>
+
+            <div>
+                <div class="button-wrapper">
+                    <input class="btn btn-primary" type="submit" value="Зареєструватись" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

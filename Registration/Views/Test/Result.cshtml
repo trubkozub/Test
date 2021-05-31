@@ -1,0 +1,34 @@
+﻿@model Registration.ModelView.TestResult
+
+<div class="table-wrapper">
+    <p>Тест номер: @Model.TestUserNumber</p>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Кількість відповідей</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Питань в тесті:</th>
+                <td>@Model.QuestionCount</td>
+
+
+            </tr>
+            <tr class="table-good">
+                <th>Вірних відповідей:</th>
+                <td>@Model.AnswerCorrect.Count</td>
+
+            </tr>
+            <tr class="table-danger">
+                <th>Невірних відповідей:</th>
+                <td>@Model.AnswerUnCorrect.Count</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

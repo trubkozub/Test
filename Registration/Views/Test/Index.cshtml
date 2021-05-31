@@ -1,0 +1,37 @@
+﻿@model Registration.Models.Test.TestUser
+@using Registration.Models.Test
+
+<div class="test-part">
+    @using (Html.BeginForm("Index", "Test", FormMethod.Post))
+    {
+        <p>@Html.HiddenFor(m => m.Id, new { @Value = Model.Id })</p>
+        foreach (Question q in Model.Questions)
+        {
+            <p>@Html.HiddenFor(m => m.Questions[Model.Questions.IndexOf(q)].Id, new { @Value = q.Id })</p>
+            <div class="test-wrapper" name="quaestion">
+                <div class="test__question">
+                    <div class="test__question-number">
+                        @q.Number
+                    </div>
+                    <div class="test__question-text">
+                        @q.Text
+                    </div>
+                </div>
+                @foreach (var a in q.Answers)
+                {
+                    <div class="test__answers-wrapper">
+                        <div class="test__answers">
+                            @Html.RadioButtonFor(m => m.Questions[Model.Questions.IndexOf(q)].SelectedAnswer, a.Id, new { @class = "", @id = "", @onclick = "check()" }) @a.Text
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        <div class="button-wrapper">
+        <button type="submit" class="btn btn-danger disabled" id="next">Далі</button>
+
+        </div>
+    }
+</div>
+
+
