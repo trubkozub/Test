@@ -193,6 +193,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\intro_1.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -229,6 +230,7 @@
     <Content Include="Views\Account\login.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Test\Result.cshtml" />
+    <Content Include="Views\Test\Intro.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

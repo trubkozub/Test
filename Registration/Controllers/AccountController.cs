@@ -83,7 +83,7 @@ namespace Registration.Controllers
                     }, claim);
                     if (String.IsNullOrEmpty(returnUrl))
                     {
-                        return RedirectToAction("Index", "Test");
+                        return RedirectToAction("Intro", "Test");
 
                     }
                     return Redirect(returnUrl);

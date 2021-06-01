@@ -17,6 +17,12 @@ namespace Registration.Controllers
         TestContext context = new TestContext();
 
         int questionPartCount = 2;
+
+        public ActionResult Intro()
+        {
+            return View();
+        }
+
         public ActionResult Index()
         {
             Models.User userLogin = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<UserManager>().FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
